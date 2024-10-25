@@ -26,6 +26,21 @@ To use it:
 * ???
 * Peace, Love & Happiness.
 
+## vm-demo.sh
+
+* Start a basic NixOS VM, which is meant to simulate a random Linux machine running SSH - not necessarily NixOS:
+
+``` sh
+nix run .\#nixosConfigurations.random-linux-machine.config.system.build.vm
+```
+
+* Either generate an ssh key pair in `$HOME/.ssh/workshop-example{,.pub}` or adapt `ssh_key_file` in the demo script.
+* Change `sshKeys` in flake.nix to contain your public key.
+* Run `bash vm-demo.sh`
+* ???
+* Peace, Love & Happiness.
+
+
 # Reference
 
 * [nixos-anywhere](https://github.com/nix-community/nixos-anywhere)

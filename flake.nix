@@ -79,9 +79,10 @@
           networking.hostName = "example-uefi";
           networking.hostId = "7d069868";
 
+          boot.kernelParams = [ "console=ttyS0,115200" ];
           boot.loader.grub.efiSupport = true;
           boot.loader.grub.efiInstallAsRemovable = true;
-          boot.loader.grub.devices = [ "nodev" ];
+
           disko.devices.disk.main.device = "/dev/vda";
         };
 
@@ -92,11 +93,9 @@
             "${modulesPath}/virtualisation/qemu-vm.nix"
           ];
 
-          users.users.root.password = "please-dont-hack-me";
-
+          boot.kernelParams = [ "console=ttyS0,115200" ];
           boot.loader.grub.efiSupport = true;
           boot.loader.grub.efiInstallAsRemovable = true;
-          boot.loader.grub.devices = [ "nodev" ];
 
           virtualisation = {
             useEFIBoot = true;
