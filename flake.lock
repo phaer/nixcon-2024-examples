@@ -125,11 +125,28 @@
         "type": "github"
       }
     },
+    "nixpkgs-patched": {
+      "locked": {
+        "lastModified": 1729285615,
+        "narHash": "sha256-RKOtwAofXHVHZNJk0vOfhk+kKdodAog9V+kJhBS0On0=",
+        "owner": "phaer",
+        "repo": "nixpkgs",
+        "rev": "107ceaedcee228f21f39ccfd1122951e1388fe60",
+        "type": "github"
+      },
+      "original": {
+        "owner": "phaer",
+        "ref": "qemu-bootloader-size",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "disko": "disko",
         "nixos-anywhere": "nixos-anywhere",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-patched": "nixpkgs-patched"
       }
     },
     "treefmt-nix": {

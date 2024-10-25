@@ -47,3 +47,5 @@ nix run .\#nixosConfigurations.random-linux-machine.config.system.build.vm
 * [disko](https://github.com/nix-community/disko)
 * [disko-templates](https://github.com/nix-community/disko-templates)
 * [NixCon 2023 Talk by Mic92 & lassulus](https://media.ccc.de/v/nixcon-2023-35975-disko-and-nixos-anywhere-declarative-and-remote-installation-of-nixos)
+* [virtualisation/qemu-vm: allow passing diskSize...](https://github.com/NixOS/nixpkgs/pull/349624)
+  (needed to get a disk image larger than the nixos closure if you use `virtualisation.useBootLoader = true`)

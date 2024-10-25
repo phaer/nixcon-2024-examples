@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-patched.url = "github:phaer/nixpkgs/qemu-bootloader-size";
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
     nixos-anywhere.url = "github:nix-community/nixos-anywhere";
@@ -10,7 +11,7 @@
     nixos-anywhere.inputs.disko.follows = "disko";
   };
 
-  outputs = { self, nixpkgs, disko, nixos-anywhere }:
+  outputs = { self, nixpkgs, nixpkgs-patched, disko, nixos-anywhere }:
     let
       # TODO: Change me!
       sshKeys = [
@@ -87,7 +88,7 @@
         };
 
       nixosConfigurations.random-linux-machine =
-        nixpkgs.legacyPackages.x86_64-linux.nixos ({ modulesPath, ... }: {
+        nixpkgs-patched.legacyPackages.x86_64-linux.nixos ({ modulesPath, ... }: {
           imports = [
             self.nixosModules.shared
             "${modulesPath}/virtualisation/qemu-vm.nix"
