@@ -24,6 +24,10 @@
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
 
     in {
+      packages = forAllSystems (system: {
+        slides = nixpkgs.legacyPackages.${system}.callPackage ./slides {};
+      });
+
       devShells = forAllSystems (system:
         let pkgs = nixpkgs.legacyPackages.${system};
         in {
